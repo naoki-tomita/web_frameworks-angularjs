@@ -1,5 +1,6 @@
 var gulp = require( "gulp" ),
-    webserver = require( "gulp-webserver" );
+    webserver = require( "gulp-webserver" ),
+    spawn = require( "child_process" ).spawn;
 
 gulp.task( "webserver", function() {
   gulp.src( "./" )
@@ -9,4 +10,15 @@ gulp.task( "webserver", function() {
   } ) );
 } );
 
-gulp.task( "default", [ "webserver" ] );
+gulp.task( "default", [ "webserver", "watch" ] );
+
+gulp.task( "watch", function() {
+  gulp.watch( "./build/**/*.js", [ "build" ] );
+} );
+
+gulp.task( "build", function( done ) {
+  var p = spawn( "npm", [ "run", "build" ], { stdio: "inherit" } );
+  p.on( "close", function() {
+    done();
+  } );
+} );
