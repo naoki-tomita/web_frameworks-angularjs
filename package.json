@@ -1,0 +1,37 @@
+{
+  "name": "web_frameworks-angularjs",
+  "version": "1.0.0",
+  "description": "web framework trade fair",
+  "main": "gulpfile.js",
+  "scripts": {
+    "tsc": "tsc -p .",
+    "browserify": "browserify ./build/src/index.js -o ./bundle.js",
+    "build": "npm run tsc && npm run browserify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://naoki-tomita@github.com/naoki-tomita/web_frameworks-angularjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naoki-tomita/web_frameworks-angularjs/issues"
+  },
+  "homepage": "https://github.com/naoki-tomita/web_frameworks-angularjs#readme",
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1",
+    "typescript": "^2.1.6"
+  },
+  "dependencies": {
+    "@angular/common": "^2.4.7",
+    "@angular/compiler": "^2.4.7",
+    "@angular/core": "^2.4.7",
+    "@angular/platform-browser": "^2.4.7",
+    "@angular/platform-browser-dynamic": "^2.4.7",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.7.6"
+  }
+}
